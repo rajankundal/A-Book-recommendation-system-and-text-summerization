@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body style="background-color: rgb(238, 237, 237);">
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo border"><a href="#">Book Recommender System</a></div>
+            <ul >
+                <li class="border"><a href='/'>Home</a></li>
+                <li class="border"><a href="/recommend">Recommend</a></li>
+                <li class="border"><a href="/contact us">Contact Us</a></li>
+                <li class="border"><a href="/aboutus">About</a></li>
+                <button class="border"><a href="/login">LogIn</a></button>
+                <button class="border"><a href="#">Logout</a></button>
+            </ul>
+        </div>
+    
+      </nav>
+                <h1 >Recommend Books</h1>
+                <form action="/recommend_books" method="post">
+                    <input  id="search-bar"  name="user_input"  type="text" placeholder="Enter book_name">
+                </br>
+            </br>
+                <input  id="button"   type="submit" value="submit" name="user_input" >
+                </form>
+{% if data%}
+{% for i in data %}
+        <div>
+            <img src='{{i[2]}}'>
+            <p > Book title -{{i[0]}}</p>
+            <h4 >Author -{{i[1]}}</h4>
+        </div>  
+    </div>
+{% endfor %}
+{% endif %}
+                
+</body>
+</html>

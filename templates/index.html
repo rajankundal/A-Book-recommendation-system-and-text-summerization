@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 20 List of books</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body style="background-color:  rgb(238, 237, 237);">
+  <nav class="navbar">
+    <div class="navdiv">
+        <div class="logo border"><a href="#">Book Recommender System</a></div>
+        <ul >
+            <li class="border"><a href='/'>Home</a></li>
+            <li class="border"><a href="/recommend">Recommend</a></li>
+            <li class="border"><a href='/raja'>Text summerize</a></li>
+            <li class="border"><a href="/contact us">Contact Us</a></li>
+            <li class="border"><a href="/aboutus">About</a></li>
+            <button class="border"><a href="/login">LogIn</a></button>
+            <button class="border"><a href="/logout">Logout</a></button>
+        </ul>
+    </div>
+</nav>
+<h2 style="font-size: 40px;">Top 20 Books</h2>
+{% for i in range(book_name|length) %}
+    <div class="book border">
+        <img src='{{image[i]}}'alt="">
+        <h4>{{ book_name[i]}}</h4>
+        <p>{{author[i]}}</p>
+        <p> Votes-{{votes[i]}}</p>
+        <p> Ratings-{{ratings[i]}}</p>
+    </div>
+{% endfor %} 
+<div id="footer" > <marquee behavior="" direction="left"></marquee>@2024 copyright
+   </div>
+</body>
+</html>

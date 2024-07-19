@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body style="background-image: url('/static/img/e.webp'); background-size: cover;">
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo border"><a href="#">Book Recommender System</a></div>
+            <ul >
+                <li class="border"><a href=''>Home</a></li>
+                <li class="border"><a href='/'>Home2</a></li>
+                <li class="border"><a href="/recommend">Recommend</a></li>
+                <li class="border"><a href="/contact us">Contact Us</a></li>
+                <li class="border"><a href="/aboutus">About</a></li>
+                <button class="border"><a href="/login">LogIn</a></button>
+                <button class="border"><a href="/logout">Logout</a></button>
+            </ul>
+        </div>
+      </nav>
+      <div class="login-container">
+        <h2 style="color: white;">Login</h2>
+        <form action="/r_velidation" method="post">
+            <div class="input-group">
+                <label for="username" style="color: white;">Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter your username" required>
+            </div>
+            <div class="input-group">
+                <label for="password" style="color: white;">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button  type="submit" style="color: gold;">Login</button>
+        </form>
+        <p>Not a member ? <a href="/register" style="color: yellow;">Create Account</a></p>
+    </div>
+</body>
+</html>
